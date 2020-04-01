@@ -112,6 +112,7 @@ export default {
       } else {
         options.placement = this.currentPlacement;
       }
+      console.log(options.placement);
       options.offset = this.offset;
       options.arrowOffset = this.arrowOffset;
       this.popperJS = new PopperJS(reference, popper, options);
