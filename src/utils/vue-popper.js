@@ -100,7 +100,6 @@ export default {
       if (this.popperJS && this.popperJS.destroy) {
         this.popperJS.destroy();
       }
-      console.log(this.currentPlacement);
       if (document.dir === 'rtl') {
         const hash = {
           end: 'start',
@@ -108,11 +107,10 @@ export default {
           left: 'right',
           right: 'left'
         };
-        options.placement = this.currentPlacement;
+        options.placement = this.currentPlacement.replace(/start|end|right|left/g, matched => hash[matched]);
       } else {
         options.placement = this.currentPlacement;
       }
-      console.log(options.placement);
       options.offset = this.offset;
       options.arrowOffset = this.arrowOffset;
       this.popperJS = new PopperJS(reference, popper, options);
