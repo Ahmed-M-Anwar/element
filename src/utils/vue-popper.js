@@ -100,17 +100,15 @@ export default {
       if (this.popperJS && this.popperJS.destroy) {
         this.popperJS.destroy();
       }
-
+      console.log(this.currentPlacement);
       if (document.dir === 'rtl') {
-        console.log('rtl');
         const hash = {
           end: 'start',
           start: 'end',
           left: 'right',
           right: 'left'
         };
-        //options.placement = this.currentPlacement.replace(/start|end|right|left/g, matched => hash[matched]);
-        options.placement = this.currentPlacement;
+        options.placement = this.currentPlacement.replace(/start|end|right|left/g, matched => hash[matched]);
       } else {
         options.placement = this.currentPlacement;
       }
