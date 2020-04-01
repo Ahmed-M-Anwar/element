@@ -102,6 +102,7 @@ export default {
       }
 
       if (document.dir === 'rtl') {
+        console.log('rtl');
         const hash = {
           end: 'start',
           start: 'end',
