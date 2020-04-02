@@ -103,7 +103,9 @@
     },
     computed: {
       style() {
-        return { 'padding-right': (this.node.level - 1) * this.tree.indent + 'px' };
+        return document.dir === 'rtl' 
+          ? { 'padding-right': (this.node.level - 1) * this.tree.indent + 'px' }
+          : { 'padding-left': (this.node.level - 1) * this.tree.indent + 'px' };
       }
     },
 
