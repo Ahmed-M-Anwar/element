@@ -43,10 +43,11 @@
             }
           });
 
+          let transform;
           if(document.dir === 'rtl' && sizeDir === 'y') {
-            const transform = `translate${firstUpperCase(sizeDir)}(-${offset}px)`;
+            transform = `translate${firstUpperCase(sizeDir)}(-${offset}px)`;
           } else {
-            const transform = `translate${firstUpperCase(sizeDir)}(${offset}px)`;
+            transform = `translate${firstUpperCase(sizeDir)}(${offset}px)`;
           }
           console.log('hhhhh');
           style[sizeName] = tabSize + 'px';
