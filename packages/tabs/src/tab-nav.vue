@@ -46,7 +46,8 @@
         const dir = ['top', 'bottom'].indexOf(this.rootTabs.tabPosition) !== -1 ? 'X' : 'Y';
         if (document.dir === 'rtl' && dir === 'Y') {
           return {
-            console.log(dir, this.navOffset);
+            console.log(dir);
+            console.log(this.navOffset);
             transform: `translate${dir}(${this.navOffset}px)`
           };
         }
