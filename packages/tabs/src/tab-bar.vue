@@ -37,19 +37,17 @@
                 tabSize -= parseFloat(tabStyles.paddingLeft) + parseFloat(tabStyles.paddingRight);
               }
               if (sizeName === 'width') {
-                offset += parseFloat(tabStyles.paddingLeft);
+                if (document.dir === 'rtl') {
+                  offset -= parseFloat(tabStyles.paddingRight);
+                } else {
+                  offset += parseFloat(tabStyles.paddingLeft);
+                }
               }
               return false;
             }
           });
 
-          let transform;
-          if(document.dir === 'rtl' && sizeDir === 'y') {
-            transform = `translate${firstUpperCase(sizeDir)}(-${offset}px)`;
-          } else {
-            transform = `translate${firstUpperCase(sizeDir)}(${offset}px)`;
-          }
-          console.log('hhhhh');
+          const transform = `translate${firstUpperCase(sizeDir)}(${offset}px)`;
           style[sizeName] = tabSize + 'px';
           style.transform = transform;
           style.msTransform = transform;
