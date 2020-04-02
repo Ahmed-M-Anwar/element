@@ -44,6 +44,11 @@
     computed: {
       navStyle() {
         const dir = ['top', 'bottom'].indexOf(this.rootTabs.tabPosition) !== -1 ? 'X' : 'Y';
+        if (document.dir === 'rtl' && dir === 'Y') {
+          return {
+            transform: `translate${dir}(${this.navOffset}px)`
+          };
+        }
         return {
           transform: `translate${dir}(-${this.navOffset}px)`
         };
