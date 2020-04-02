@@ -101,6 +101,11 @@
         default: false
       }
     },
+    computed: {
+      style() {
+        return { 'padding-right': (this.node.level - 1) * this.tree.indent + 'px' };
+      }
+    },
 
     components: {
       ElCollapseTransition,
