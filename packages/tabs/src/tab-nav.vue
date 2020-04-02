@@ -95,19 +95,11 @@
         let newOffset = currentOffset;
 
         if (isHorizontal) {
-          let dirLeft = document.dir === 'rtl'
-            ? 'right'
-            : 'left';
-
-          let dirRight = document.dir === 'rtl'
-            ? 'left'
-            : 'right';
-          
-          if (activeTabBounding[dirLeft] < navScrollBounding[dirLeft]) {
-            newOffset = currentOffset - (navScrollBounding[dirLeft] - activeTabBounding[dirLeft]);
+          if (activeTabBounding.left < navScrollBounding.left) {
+            newOffset = currentOffset - (navScrollBounding.left - activeTabBounding.left);
           }
-          if (activeTabBounding[dirRight] > navScrollBounding[dirRight]) {
-            newOffset = currentOffset + activeTabBounding[dirRight] - navScrollBounding[dirRight];
+          if (activeTabBounding.right > navScrollBounding.right) {
+            newOffset = currentOffset + activeTabBounding.right - navScrollBounding.right;
           }
         } else {
           if (activeTabBounding.top < navScrollBounding.top) {
