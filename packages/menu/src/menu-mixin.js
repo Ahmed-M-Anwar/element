@@ -38,7 +38,9 @@ export default {
           parent = parent.$parent;
         }
       }
-      return {paddingLeft: padding + 'px'};
+      return document.dir === 'rtl'
+        ? {paddingRight: padding + 'px'}
+        : {paddingLeft: padding + 'px'};
     }
   }
 };
