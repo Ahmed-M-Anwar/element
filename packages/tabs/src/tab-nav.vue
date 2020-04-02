@@ -51,6 +51,7 @@
             transform: `translate${dir}(${this.navOffset}px)`
           };
         }
+        console.log('ssss');
         return {
           transform: `translate${dir}(-${this.navOffset}px)`
         };
