@@ -39,6 +39,7 @@
               if (sizeName === 'width') {
                 if (document.dir === 'rtl') {
                   offset += parseFloat(tabStyles.paddingRight);
+                  offset = -Math.abs(offset);
                 } else {
                   offset += parseFloat(tabStyles.paddingLeft);
                 }
