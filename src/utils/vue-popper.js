@@ -108,6 +108,11 @@ export default {
           right: 'left'
         };
         options.placement = this.currentPlacement.replace(/start|end|right|left/g, matched => hash[matched]);
+        
+        if (options.placement === 'left-start' || options.placement === 'right-start' || options.placement === 'left-end' || options.placement === 'right-end') {
+          options.placement = options.placement.replace(/start|end/g, matched => hash[matched]);
+        }
+        
       } else {
         options.placement = this.currentPlacement;
       }
