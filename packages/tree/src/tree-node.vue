@@ -1,5 +1,5 @@
 <template>
-  <transition name="etnode">
+  
   <div
     class="el-tree-node"
     @click.stop="handleClick"
@@ -24,6 +24,7 @@
     @drop.stop="handleDrop"
     ref="node"
   >
+    <transition name="etnode">
     <div class="el-tree-node__content"
       :style="style">
       <span
@@ -69,8 +70,9 @@
         </el-tree-node>
       </div>
     </el-collapse-transition>
+    </transition>
   </div>
-</transition>
+
 </template>
 
 <script type="text/jsx">
