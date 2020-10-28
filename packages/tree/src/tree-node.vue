@@ -1,5 +1,5 @@
 <template>
-  <transition name="el-tree-node">
+  <transition name="etnode">
   <div
     class="el-tree-node"
     @click.stop="handleClick"
@@ -286,3 +286,34 @@
     }
   };
 </script>
+
+<style>
+
+.etnode-enter-active,
+.etnode-leave-active,
+.etnode-move {
+    transition: 500ms cubic-bezier(0.59, 0.12, 0.34, 0.95);
+    transition-property: opacity, transform;
+}
+
+.etnode-enter {
+    opacity: 0;
+    transform: translateX(50px) scaleY(0.5);
+}
+
+.etnode-enter-to {
+    opacity: 1;
+    transform: translateX(0) scaleY(1);
+}
+
+.etnode-leave-active {
+    position: absolute;
+}
+
+.etnode-leave-to {
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: center top;
+}
+
+</style>
