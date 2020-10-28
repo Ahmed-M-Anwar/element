@@ -1,6 +1,4 @@
 <template>
-  <div>
-  <transition name="etnode">
   <div
     class="el-tree-node"
     @click.stop="handleClick"
@@ -72,8 +70,6 @@
       </div>
     </el-collapse-transition>
   </div>
-  </transition>
-</div>
 </template>
 
 <script type="text/jsx">
