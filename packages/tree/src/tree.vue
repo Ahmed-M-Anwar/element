@@ -9,7 +9,7 @@
     }"
     role="tree"
   >
-      <transition-group  name="el-tree-node" mode="out-in">
+      <transition-group  name="el-tree-node">
       <el-tree-node
         v-for="child in root.childNodes"
         :node="child"
