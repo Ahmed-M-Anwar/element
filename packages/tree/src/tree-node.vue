@@ -58,6 +58,7 @@
         role="group"
         :aria-expanded="expanded"
       >
+      <transition-group name="el-tree-node" tag="template">
         <el-tree-node
           :render-content="renderContent"
           v-for="child in node.childNodes"
@@ -67,6 +68,7 @@
           :node="child"
           @node-expand="handleChildNodeExpand">
         </el-tree-node>
+       </transition-group>
       </div>
     </el-collapse-transition>
   </div>
@@ -121,8 +123,6 @@
         },
         render(h) {
           const parent = this.$parent.$parent;
-          console.log(this.$parent.tree)
-          console.log(parent.tree)
           const tree = parent.tree;
           const node = this.node;
           const { data, store } = node;
