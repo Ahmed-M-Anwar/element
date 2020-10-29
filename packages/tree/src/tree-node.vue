@@ -58,7 +58,7 @@
         role="group"
         :aria-expanded="expanded"
       >
-      <transition-group  name="el-tree-node" mode="out-in">
+      <transition-group  name="el-tree-node">
         <el-tree-node
           :render-content="renderContent"
           v-for="child in node.childNodes"
