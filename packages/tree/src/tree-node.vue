@@ -122,7 +122,7 @@
           }
         },
         render(h) {
-          const parent = this.$parent;
+          const parent = this.$parent.$parent;
           console.log(this.$parent.tree, 'parent')
           console.log(this.$parent.$parent.tree, 'parent.parent')
           const tree = parent.tree;
