@@ -1,5 +1,5 @@
 <template>
-<transition  name="el-tree-node" appear>
+<transition  name="el-tree-node">
   <div
     class="el-tree-node"
     @click.stop="handleClick"
