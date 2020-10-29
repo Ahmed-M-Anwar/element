@@ -1,4 +1,5 @@
 <template>
+<transition name="el-tree-node" appear @enter="enter">
   <div
     class="el-tree-node"
     @click.stop="handleClick"
@@ -70,6 +71,7 @@
       </div>
     </el-collapse-transition>
   </div>
+</transition>
 </template>
 
 <script type="text/jsx">
@@ -163,6 +165,7 @@
     },
 
     methods: {
+      enter () { console.log('enter') },
       getNodeKey(node) {
         return getNodeKey(this.tree.nodeKey, node.data);
       },
