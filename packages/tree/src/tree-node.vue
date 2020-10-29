@@ -248,11 +248,22 @@
       handleDragEnd(event) {
         if (!this.tree.draggable) return;
         this.tree.$emit('tree-node-drag-end', event, this);
-      }
+      },
+      getParent() {
+        let component = null
+        let parent = this.$parent
+        while (parent && !component) {
+          if (parent.tree) {
+            component = parent
+          }
+          parent = parent.$parent
+        }
+        return component
+      },
     },
 
     created() {
-      const parent = this.$parent;
+      const parent = this.getParent();
 
       if (parent.isTree) {
         this.tree = parent;
