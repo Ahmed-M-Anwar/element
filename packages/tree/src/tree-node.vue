@@ -1,4 +1,5 @@
 <template>
+<transition  name="el-tree-node" appear>
   <div
     class="el-tree-node"
     @click.stop="handleClick"
@@ -70,6 +71,7 @@
       </div>
     </el-collapse-transition>
   </div>
+</transition>
 </template>
 
 <script type="text/jsx">
