@@ -122,7 +122,7 @@
           }
         },
         render(h) {
-          const parent = this.$parent.$parent;
+          const parent = this.$parent;
           const tree = parent.tree;
           const node = this.node;
           const { data, store } = node;
@@ -252,7 +252,7 @@
     },
 
     created() {
-      const parent = this.$parent.$parent;
+      const parent = this.$parent;
 
       if (parent.isTree) {
         this.tree = parent;
