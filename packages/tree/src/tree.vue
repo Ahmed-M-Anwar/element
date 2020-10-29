@@ -10,8 +10,6 @@
     role="tree"
   >
     
-    
-    <transition-group name="el-tree-node" tag="template">
       <el-tree-node
         v-for="child in root.childNodes"
         :node="child"
@@ -22,7 +20,6 @@
         :render-content="renderContent"
         @node-expand="handleNodeExpand">
       </el-tree-node>
-    </transition-group>
     
     <div class="el-tree__empty-block" v-if="isEmpty">
       <span class="el-tree__empty-text">{{ emptyText }}</span>
