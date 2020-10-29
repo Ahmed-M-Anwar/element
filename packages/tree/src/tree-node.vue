@@ -122,7 +122,7 @@
           }
         },
         render(h) {
-          const parent = this.$parent;
+          const parent = this.$parent.$parent;
           console.log(this.$parent.tree)
           onsole.log(this.$parent.$parent.tree)
           const tree = parent.tree;
@@ -259,7 +259,7 @@
       if (parent.isTree) {
         this.tree = parent;
       } else {
-        this.tree = parent.tree;
+        this.tree = parent.$parent.tree;
       }
 
       const tree = this.tree;
