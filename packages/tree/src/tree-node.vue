@@ -123,6 +123,8 @@
         },
         render(h) {
           const parent = this.$parent;
+          console.log(this.$parent.tree)
+          onsole.log(this.$parent.$parent.tree)
           const tree = parent.tree;
           const node = this.node;
           const { data, store } = node;
@@ -252,7 +254,7 @@
     },
 
     created() {
-      const parent = this.$parent;
+      const parent = this.$parent.$parent;
 
       if (parent.isTree) {
         this.tree = parent;
