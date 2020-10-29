@@ -253,7 +253,7 @@
         let component = null
         let parent = this.$parent
         while (parent && !component) {
-          if (parent.tree) {
+          if (parent.tree || parent.isTree) {
             component = parent
           }
           parent = parent.$parent
