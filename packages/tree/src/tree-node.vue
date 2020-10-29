@@ -250,7 +250,7 @@
     },
 
     created() {
-      const parent = this.$parent;
+      const parent = this.$parent.$parent;
 
       if (parent.isTree) {
         this.tree = parent;
