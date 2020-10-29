@@ -1,5 +1,4 @@
 <template>
-<transition  name="el-tree-node" appear>
   <div
     class="el-tree-node"
     @click.stop="handleClick"
@@ -59,6 +58,7 @@
         role="group"
         :aria-expanded="expanded"
       >
+      <transition-group  name="el-tree-node">
         <el-tree-node
           :render-content="renderContent"
           v-for="child in node.childNodes"
@@ -68,10 +68,10 @@
           :node="child"
           @node-expand="handleChildNodeExpand">
         </el-tree-node>
+      </transition-group>
       </div>
     </el-collapse-transition>
   </div>
-</transition>
 </template>
 
 <script type="text/jsx">
