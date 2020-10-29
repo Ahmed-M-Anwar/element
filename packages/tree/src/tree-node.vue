@@ -120,7 +120,7 @@
           }
         },
         render(h) {
-          const parent = this.$parent;
+          const parent = this.$parent.$parent;
           const tree = parent.tree;
           const node = this.node;
           const { data, store } = node;
